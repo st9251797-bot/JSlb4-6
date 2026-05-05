@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Фільмова база</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; padding: 20px; }
+        .container { max-width: 1200px; margin: auto; background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h1 { text-align: center; color: #333; }
+        .controls { display: flex; justify-content: space-between; margin-bottom: 20px; align-items: center; }
+        #search { padding: 10px; width: 300px; border: 1px solid #ccc; border-radius: 4px; }
+        .sort-btn { padding: 10px 15px; background: #007bff; color: white; border: none; border-radius: 4px; cursor: pointer; margin-left: 10px; }
+        .sort-btn:hover { background: #0056b3; }
+        .movies { display: flex; flex-wrap: wrap; gap: 20px; }
+        .movie-card { background: #fff; border: 1px solid #ddd; border-radius: 8px; padding: 15px; width: calc(33.333% - 20px); box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .movie-card img { max-width: 100%; height: auto; border-radius: 4px; }
+        .movie-card h3 { margin: 10px 0; color: #333; }
+        .movie-card p { margin: 5px 0; color: #666; }
+        .error { color: red; text-align: center; padding: 20px; }
+        @media (max-width: 768px) { .movie-card { width: calc(50% - 20px); } }
+        @media (max-width: 480px) { .movie-card { width: 100%; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Фільмова база</h1>
+        <div class="controls">
+            <input type="text" id="search" placeholder="Пошук за назвою...">
+            <div>
+                <button class="sort-btn" id="sort-alpha">Сортувати за алфавітом</button>
+                <button class="sort-btn" id="sort-rating">Сортувати за рейтингом</button>
+            </div>
+        </div>
+        <div id="movies" class="movies"></div>
+        <div id="error" class="error" style="display: none;"></div>
+    </div>
+    <script src="lb1-3.js"></script>
+</body>
+</html>
